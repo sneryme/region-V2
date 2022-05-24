@@ -8,7 +8,7 @@ void enter(Vibor* Vibor1){
         Vibor1->check = Read_file(Vibor1);
         break;
     case (Enter::Sortt):
-        Sort(Vibor1->stolb,Vibor1->lis,Vibor1->rez);
+        Sort(Vibor1);
         break;
     default:
         break;

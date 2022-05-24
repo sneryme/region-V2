@@ -3,7 +3,6 @@
 int Read_file(Vibor* Vibor1){
     fstream file;
     file.open(Vibor1->file_path.toStdString());
-
     if (file.is_open()){
             string str, str_shapka;
             getline(file, str_shapka, '\n');

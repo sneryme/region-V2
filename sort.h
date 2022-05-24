@@ -6,6 +6,6 @@
 #include "mainwindow.h"
 
 
-void Sort(QString stolb, QList<Region>* list, double* rez);
+void Sort(Vibor* Vibor1);
 
 #endif // SORT_H

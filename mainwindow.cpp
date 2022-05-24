@@ -37,12 +37,9 @@ void MainWindow::on_Btn_file_clicked()
         else
             file_path = ui->line_path->text();
         QMessageBox::information(this,tr("информация"),file_path);
-
         Vibor1.file_path = file_path;
         Vibor1.region=ui->line_region->text();
         Vibor1.enum_variant = Enter::Reaed_ffile;
-        //        Vibor1.lis=list;
-
         enter(&Vibor1);
         (Vibor1.check == -1) ? QMessageBox::critical(this, "информация","не удалось открыть файл"):QMessageBox::information(this, "информация","удалось открыть файл");
         (Create_table(Vibor1.lis) == -1) ? QMessageBox::critical(this, "информация", "не удалось создать таблицу"): QMessageBox::information(this, "информация","удалось создать таблицу");
@@ -54,14 +51,15 @@ void MainWindow::on_Btn_stolb_clicked()
 {
     ui->label_rez->setText("");
     QString stolb=ui->line_stolb->text();
-    double* rez = (double*)calloc(sizeof(double),3);
-
-    Sort(stolb, Vibor1.lis, rez);
-    ui->label_rez->setText(QString("min: ") + QString::number(rez[0])+
-            QString(" max: ") + QString::number(rez[1])+
-            QString(" mediana: ") + QString::number(rez[2])
+    Vibor1.rez = (double*)calloc(sizeof(double),3);
+    Vibor1.stolb=ui->line_stolb->text();
+    Vibor1.enum_variant = Enter::Sortt;
+    enter(&Vibor1);
+    ui->label_rez->setText(QString("min: ") + QString::number(Vibor1.rez[0])+
+            QString(" max: ") + QString::number(Vibor1.rez[1])+
+            QString(" mediana: ") + QString::number(Vibor1.rez[2])
             );
-    free(rez);
+    free(Vibor1.rez);
 }
 
 
