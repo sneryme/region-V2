@@ -1,22 +1,21 @@
-#include "ui_mainwindow.h"
-#include "mainwindow.h"
 #include "Sort.h"
 
-void MainWindow::Sort(QString stolb, QList<Region>* list, double* rez)
+void Sort(QString stolb, QList<Region>* list, double* rez)
 {
+    vector<double> sort_list;
     for(int i=0;i<list->size();i++){
         if (stolb.toStdString()=="3")
-            sort_list.append(list->at(i)._npg);
+            sort_list.push_back(list->at(i)._npg);
         else if (stolb.toStdString()=="4")
-            sort_list.append(list->at(i)._birth_rate);
+            sort_list.push_back(list->at(i)._birth_rate);
         else if (stolb.toStdString()=="5")
-            sort_list.append(list->at(i)._death_rate);
+            sort_list.push_back(list->at(i)._death_rate);
         else if (stolb.toStdString()=="6")
-            sort_list.append(list->at(i)._gdw);
+            sort_list.push_back(list->at(i)._gdw);
         else if (stolb.toStdString()=="7")
-            sort_list.append(list->at(i)._urbanization);
+            sort_list.push_back(list->at(i)._urbanization);
         else
-            QMessageBox::critical(this, "информация","введён не правельный столбец");
+            qDebug("введён не правильный столбец");
     }
     double median;
     sort(sort_list.begin(),sort_list.end());

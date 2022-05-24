@@ -1,22 +1,12 @@
 #ifndef VARIANT_H
 #define VARIANT_H
+#pragma once
+
 #include <QString>
 #include "Region.h"
-#include "Create_table.h"
+#include "Reade_file.h"
+#include "Sort.h"
 
-struct Vibor{
-    QString stolb;
-    QList<Region>* lis;
-    double* rez;
-    QString file_path;
-    QString region;
-    QString filePath;
-    QString Region;
-}Vibor1;
-enum Enter{
-    Reaed_ffile,
-    Create_ttable,
-    Sortt
-};
+void enter(Vibor* Vibor1);
 
 #endif // VARIANT_H*/

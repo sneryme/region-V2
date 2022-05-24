@@ -1,9 +1,17 @@
 #ifndef READE_FILE_H
 #define READE_FILE_H
-#include "ui_mainwindow.h"
-#include "mainwindow.h"
+#pragma once
+#include <sstream>
+#include <string>
+#include <fstream>
+#include <string>
 
-int Read_file(QString file_path, QString region, QList<Region>* list);
+#include "Region.h"
+
+using namespace std;
+
+
+int Read_file(Vibor* Vibor1);
 
 #endif // READE_FILE_H
 

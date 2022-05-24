@@ -9,19 +9,18 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Create_table.cpp \
     Read_file.cpp \
     Sort.cpp \
     main.cpp \
     mainwindow.cpp \
-    variant.cpp
+    variant.cpp \
+    Create_table.cpp
 
 HEADERS += \
     Reade_file.h \
     Region.h \
     Sort.h \
     mainwindow.h \
-    Create_table.h \
     variant.h
 
 FORMS += \
